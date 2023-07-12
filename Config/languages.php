@@ -455,7 +455,7 @@ return [
         'iso-639-2t' => 'nld',
         'iso-639-2b' => 'dut',
         'iso-639-3' => 'nld',
-        'countries' => ['BE' => 'Belgium', 'NL' => 'Netherlands'],
+        'countries' => ['NL' => 'Netherlands', 'BE' => 'Belgium'],
         'scripts' => []
     ],
     [
@@ -565,7 +565,7 @@ return [
         'iso-639-2t' => 'fra',
         'iso-639-2b' => 'fre',
         'iso-639-3' => 'fra',
-        'countries' => ['BE' => 'Belgium', 'BF' => 'Burkina Faso', 'BI' => 'Burundi', 'BJ' => 'Benin', 'BL' => 'Saint Barthélemy', 'CA' => 'Canada', 'CD' => 'Congo - Kinshasa', 'CF' => 'Central African Republic', 'CG' => 'Congo - Brazzaville', 'CH' => 'Switzerland', 'CI' => 'Côte d’Ivoire', 'CM' => 'Cameroon', 'DJ' => 'Djibouti', 'FR' => 'France', 'GA' => 'Gabon', 'GN' => 'Guinea', 'GP' => 'Guadeloupe', 'GQ' => 'Equatorial Guinea', 'KM' => 'Comoros', 'LU' => 'Luxembourg', 'MC' => 'Monaco', 'MF' => 'Saint Martin', 'MG' => 'Madagascar', 'ML' => 'Mali', 'MQ' => 'Martinique', 'NE' => 'Niger', 'RE' => 'Réunion', 'RW' => 'Rwanda', 'SN' => 'Senegal', 'TD' => 'Chad', 'TG' => 'Togo'],
+        'countries' => ['FR' => 'France', 'BE' => 'Belgium', 'BF' => 'Burkina Faso', 'BI' => 'Burundi', 'BJ' => 'Benin', 'BL' => 'Saint Barthélemy', 'CA' => 'Canada', 'CD' => 'Congo - Kinshasa', 'CF' => 'Central African Republic', 'CG' => 'Congo - Brazzaville', 'CH' => 'Switzerland', 'CI' => 'Côte d’Ivoire', 'CM' => 'Cameroon', 'DJ' => 'Djibouti', 'GA' => 'Gabon', 'GN' => 'Guinea', 'GP' => 'Guadeloupe', 'GQ' => 'Equatorial Guinea', 'KM' => 'Comoros', 'LU' => 'Luxembourg', 'MC' => 'Monaco', 'MF' => 'Saint Martin', 'MG' => 'Madagascar', 'ML' => 'Mali', 'MQ' => 'Martinique', 'NE' => 'Niger', 'RE' => 'Réunion', 'RW' => 'Rwanda', 'SN' => 'Senegal', 'TD' => 'Chad', 'TG' => 'Togo'],
         'scripts' => []
     ],
     [
@@ -615,7 +615,7 @@ return [
         'iso-639-2t' => 'ell',
         'iso-639-2b' => 'gre',
         'iso-639-3' => 'ell',
-        'countries' => ['CY' => 'Cyprus', 'GR' => 'Greece'],
+        'countries' => ['GR' => 'Greece', 'CY' => 'Cyprus'],
         'scripts' => []
     ],
     [
@@ -818,7 +818,7 @@ return [
         'iso-639-2t' => 'ita',
         'iso-639-2b' => 'ita',
         'iso-639-3' => 'ita',
-        'countries' => ['CH' => 'Switzerland', 'IT' => 'Italy'],
+        'countries' => ['IT' => 'Italy', 'CH' => 'Switzerland'],
         'scripts' => []
     ],
     [
@@ -1378,7 +1378,7 @@ return [
         'iso-639-2t' => 'nep',
         'iso-639-2b' => 'nep',
         'iso-639-3' => 'nep',
-        'countries' => ['IN' => 'India', 'NP' => 'Nepal'],
+        'countries' => ['NP' => 'Nepal', 'IN' => 'India'],
         'scripts' => []
     ],
     [
@@ -1518,7 +1518,7 @@ return [
         'iso-639-2t' => 'pan',
         'iso-639-2b' => 'pan',
         'iso-639-3' => 'pan',
-        'countries' => ['IN' => 'India', 'PK' => 'Pakistan'],
+        'countries' => ['PK' => 'Pakistan', 'IN' => 'India'],
         'scripts' => ['arab' => 'arabic', 'guru' => 'gurmukhi']
     ],
     [
@@ -1568,7 +1568,7 @@ return [
         'iso-639-2t' => 'por',
         'iso-639-2b' => 'por',
         'iso-639-3' => 'por',
-        'countries' => ['BR' => 'Brazil', 'GW' => 'Guinea-Bissau', 'MZ' => 'Mozambique', 'PT' => 'Portugal'],
+        'countries' => ['PT' => 'Portugal', 'BR' => 'Brazil', 'GW' => 'Guinea-Bissau', 'MZ' => 'Mozambique'],
         'scripts' => []
     ],
     [
@@ -1608,7 +1608,7 @@ return [
         'iso-639-2t' => 'ron',
         'iso-639-2b' => 'rum',
         'iso-639-3' => 'ron',
-        'countries' => ['MD' => 'Moldova', 'RO' => 'Romania'],
+        'countries' => ['RO' => 'Romania', 'MD' => 'Moldova'],
         'scripts' => []
     ],
     [
@@ -1628,7 +1628,7 @@ return [
         'iso-639-2t' => 'rus',
         'iso-639-2b' => 'rus',
         'iso-639-3' => 'rus',
-        'countries' => ['MD' => 'Moldova', 'RU' => 'Russia', 'UA' => 'Ukraine'],
+        'countries' => ['RU' => 'Russia', 'MD' => 'Moldova', 'UA' => 'Ukraine'],
         'scripts' => []
     ],
     [
@@ -1718,7 +1718,7 @@ return [
         'iso-639-2t' => 'srp',
         'iso-639-2b' => 'srp',
         'iso-639-3' => 'srp',
-        'countries' => ['BA' => 'Bosnia and Herzegovina', 'ME' => 'Montenegro', 'RS' => 'Serbia'],
+        'countries' => ['RS' => 'Serbia', 'BA' => 'Bosnia and Herzegovina', 'ME' => 'Montenegro'],
         'scripts' => ['cyrl' => 'cyrillic', 'latn' => 'latin']
     ],
     [
@@ -1798,7 +1798,7 @@ return [
         'iso-639-2t' => 'som',
         'iso-639-2b' => 'som',
         'iso-639-3' => 'som',
-        'countries' => ['DJ' => 'Djibouti', 'ET' => 'Ethiopia', 'KE' => 'Kenya', 'SO' => 'Somalia'],
+        'countries' => ['SO' => 'Somalia', 'DJ' => 'Djibouti', 'ET' => 'Ethiopia', 'KE' => 'Kenya'],
         'scripts' => []
     ],
     [
@@ -1818,7 +1818,7 @@ return [
         'iso-639-2t' => 'spa',
         'iso-639-2b' => 'spa',
         'iso-639-3' => 'spa',
-        'countries' => ['AR' => 'Argentina', 'BO' => 'Bolivia', 'CL' => 'Chile', 'CO' => 'Colombia', 'CR' => 'Costa Rica', 'DO' => 'Dominican Republic', 'EC' => 'Ecuador', 'ES' => 'Spain', 'GQ' => 'Equatorial Guinea', 'GT' => 'Guatemala', 'HN' => 'Honduras', 'MX' => 'Mexico', 'NI' => 'Nicaragua', 'PA' => 'Panama', 'PE' => 'Peru', 'PR' => 'Puerto Rico', 'PY' => 'Paraguay', 'SV' => 'El Salvador', 'US' => 'United States', 'UY' => 'Uruguay', 'VE' => 'Venezuela'],
+        'countries' => ['ES' => 'Spain', 'AR' => 'Argentina', 'BO' => 'Bolivia', 'CL' => 'Chile', 'CO' => 'Colombia', 'CR' => 'Costa Rica', 'DO' => 'Dominican Republic', 'EC' => 'Ecuador', 'GQ' => 'Equatorial Guinea', 'GT' => 'Guatemala', 'HN' => 'Honduras', 'MX' => 'Mexico', 'NI' => 'Nicaragua', 'PA' => 'Panama', 'PE' => 'Peru', 'PR' => 'Puerto Rico', 'PY' => 'Paraguay', 'SV' => 'El Salvador', 'US' => 'United States', 'UY' => 'Uruguay', 'VE' => 'Venezuela'],
         'scripts' => []
     ],
     [
@@ -1858,7 +1858,7 @@ return [
         'iso-639-2t' => 'swe',
         'iso-639-2b' => 'swe',
         'iso-639-3' => 'swe',
-        'countries' => ['FI' => 'Finland', 'SE' => 'Sweden'],
+        'countries' => ['SE' => 'Sweden', 'FI' => 'Finland'],
         'scripts' => []
     ],
     [
@@ -2088,7 +2088,7 @@ return [
         'iso-639-2t' => 'uzb',
         'iso-639-2b' => 'uzb',
         'iso-639-3' => 'uzb + 2',
-        'countries' => ['AF' => 'Afghanistan', 'UZ' => 'Uzbekistan'],
+        'countries' => ['UZ' => 'Uzbekistan', 'AF' => 'Afghanistan'],
         'scripts' => ['arab' => 'arabic', 'cyrl' => 'cyrillic', 'latn' => 'latin']
     ],
     [
