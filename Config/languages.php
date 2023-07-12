@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection ALL */
 
 /**
 * This file should always return an array containing
