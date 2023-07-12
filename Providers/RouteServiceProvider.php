@@ -5,6 +5,7 @@ namespace Modules\Locales\Providers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Modules\Locales\Console\LangCommand;
+use Modules\Locales\Console\ScanTranslationsCommand;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
         $this->commands([
             LangCommand::class,
+            ScanTranslationsCommand::class,
         ]);
     }
 
