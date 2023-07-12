@@ -4,6 +4,7 @@ namespace Modules\Locales\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Modules\Locales\Extensions\Translator;
+use Modules\Locales\Http\Middleware\LocalizationMiddleware;
 
 class LocalesServiceProvider extends ServiceProvider
 {
@@ -47,7 +48,7 @@ class LocalesServiceProvider extends ServiceProvider
 
     public function registerMiddleware($router): void
     {
-        $router->pushMiddlewareToGroup('web', \Modules\Locales\Http\Middleware\LocalizationMiddleware::class);
+        $router->pushMiddlewareToGroup('web', LocalizationMiddleware::class);
     }
 
     public function provides(): array
