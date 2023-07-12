@@ -43,7 +43,9 @@ class UpdateTranslationFileJob implements ShouldQueue
         $key = $this->key;
         $locale = $this->locale;
 
-        if (str_contains($key, "::")) {
+        if (str_contains($key, " ")) {
+            return;
+        } else if (str_contains($key, "::")) {
             $keyData = $this->processModuleKey($key);
         } else if (str_contains($key, ".")) {
             $keyData = $this->processStandardKey($key);
