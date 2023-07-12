@@ -605,7 +605,7 @@ return [
         'iso-639-2t' => 'deu',
         'iso-639-2b' => 'ger',
         'iso-639-3' => 'deu',
-        'countries' => ['AT' => 'Austria', 'BE' => 'Belgium', 'CH' => 'Switzerland', 'DE' => 'Germany', 'LI' => 'Liechtenstein', 'LU' => 'Luxembourg'],
+        'countries' => ['DE' => 'Germany', 'AT' => 'Austria', 'BE' => 'Belgium', 'CH' => 'Switzerland', 'LI' => 'Liechtenstein', 'LU' => 'Luxembourg'],
         'scripts' => []
     ],
     [
