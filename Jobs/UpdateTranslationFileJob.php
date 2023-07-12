@@ -134,5 +134,4 @@ class UpdateTranslationFileJob implements ShouldQueue
         $localisationPath = base_path('lang');
         return compact('localisationPath', 'key');
     }
-
 }

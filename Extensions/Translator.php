@@ -15,6 +15,9 @@ class Translator extends BaseTranslator
     {
         $job = new UpdateTranslationFileJob($key, $locale, $replace);
         dispatch($job);
+        if (array_key_exists('default', $replace)){
+            unset($replace['default']);
+        }
         return parent::get($key, $replace, $locale, $fallback);
     }
 }
