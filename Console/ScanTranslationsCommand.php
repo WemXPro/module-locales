@@ -56,6 +56,7 @@ class ScanTranslationsCommand extends Command
         $locFile = '';
         $oldModule = '';
         $oldLocFile = '';
+
         foreach ($translations as $key => $value) {
 
             if (str_contains($key, "::")) {
@@ -73,9 +74,6 @@ class ScanTranslationsCommand extends Command
                 $oldLocFile = $locFile;
                 $this->warn("Localizations path: $locFile.php");
             }
-
-
-
             $this->info("'$key' => $value,");
         }
     }
