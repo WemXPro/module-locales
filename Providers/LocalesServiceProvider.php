@@ -22,6 +22,8 @@ class LocalesServiceProvider extends ServiceProvider
 
     public function register(): void
     {
+        $this->app->register(RouteServiceProvider::class);
+
         if (env('LOCALES_GENERATOR', false)) {
             $this->app->bind('translator', function ($app) {
                 $loader = new \Illuminate\Translation\FileLoader($app['files'], $app['path.lang']);
@@ -31,9 +33,6 @@ class LocalesServiceProvider extends ServiceProvider
                 return $trans;
             });
         }
-
-
-        $this->app->register(RouteServiceProvider::class);
     }
 
     public function registerViews(): void
