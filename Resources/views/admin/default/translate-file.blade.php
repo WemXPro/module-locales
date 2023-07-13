@@ -26,7 +26,7 @@
                         @endforeach
                         <div class="fixed-bottom d-flex justify-content-end">
                             <button type="submit" class="btn btn-warning m-5"><i class="fas fa-save"
-                                    style="font-size: 3em;"></i></button>
+                                                                                 style="font-size: 3em;"></i></button>
                         </div>
                     </form>
                     <hr>
@@ -35,21 +35,22 @@
         </div>
     </div>
 
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function trans(id) {
             var text = document.getElementById('source-' + id).value;
-            var lang = 'en|{{ $code }}';
+            const lang = 'en|{{ $code }}';
 
             $.ajax({
                 type: 'POST',
-                url: @json('route("locales.translate.api")'),
+                url: '{{ route("locales.translate.api") }}',
                 data: {
                     '_token': '{{ csrf_token() }}',
                     'text': text,
                     'lang': lang,
                 },
-                success: function(response) {
+                success: function (response) {
                     document.getElementById(id).value = response.translation
                 }
             });
