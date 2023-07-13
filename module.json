@@ -7,5 +7,5 @@
     "providers": [
         "Modules\\Locales\\Providers\\LocalesServiceProvider"
     ],
-    "files": []
+    "files": ["locales.php"]
 }
