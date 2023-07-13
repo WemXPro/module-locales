@@ -68,7 +68,7 @@ class LocalesServiceProvider extends ServiceProvider
 
     private function languageLoad(): void
     {
-        $langPath = base_path('lang/' . $this->moduleNameLower);
+        $langPath = resource_path('lang/' . $this->moduleNameLower);
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, $this->moduleNameLower);
         } else {

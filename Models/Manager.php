@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 
 class Manager
 {
-    public ?\Modules\Locales\Models\ISO639 $iso639 = null;
+    public ?ISO639 $iso639 = null;
     private ?Filesystem $filesystem = null;
     private ?array $languages = null;
     private array $langs = [];
@@ -17,7 +17,7 @@ class Manager
     {
         $this->iso639 = $this->getIsoInstance();
         $this->filesystem = $this->getFilesystemInstance();
-        $this->languages = $this->filesystem->directories(base_path('lang'));
+        $this->languages = $this->filesystem->directories(resource_path('lang'));
         $this->countries = collect(require module_path('Locales', 'Config/languages.php'));
 
         foreach ($this->languages as $key => $path) {

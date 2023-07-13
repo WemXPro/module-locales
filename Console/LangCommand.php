@@ -26,7 +26,7 @@ class LangCommand extends Command
         parent::__construct();
         $this->locale = config('app.locale') ? config('app.locale') : 'en';
         $this->fallback_locale = config('app.fallback_locale') ? config('app.fallback_locale') : 'en';
-        $this->lang_path = base_path('lang');
+        $this->lang_path = resource_path('lang');
         $this->createDir([
             $this->lang_path . self::SEP . $this->locale,
             $this->lang_path . self::SEP . $this->fallback_locale,

@@ -131,7 +131,7 @@ class UpdateTranslationFileJob implements ShouldQueue
 
     private function processStandardKey($key): array
     {
-        $localisationPath = base_path('lang');
+        $localisationPath = resource_path('lang');
         return compact('localisationPath', 'key');
     }
 }

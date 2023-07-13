@@ -30,7 +30,7 @@
                                     <tr>
                                         <td><code>{{ $key }}</code></td>
                                         <td>{{ $lang }}</td>
-                                        <td><code>{{ base_path('lang') }}/{{ $key }}/</code>
+                                        <td><code>{{ resource_path('lang') }}/{{ $key }}/</code>
                                         </td>
                                         <td class="text-right">
                                             <a class="btn btn-primary btn-sm"

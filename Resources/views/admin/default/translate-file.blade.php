@@ -43,7 +43,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: 'https://pro.wemx.net/admin/locales/api/translate',
+                url: @json('route("locales.translate.api")'),
                 data: {
                     '_token': '{{ csrf_token() }}',
                     'text': text,

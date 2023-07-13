@@ -46,7 +46,7 @@ class LocalesController extends Controller
 
     public function remove($code)
     {
-        $path = base_path('lang') . "/{$code}";
+        $path = resource_path('lang') . "/{$code}";
         if (File::isDirectory($path)) {
             File::deleteDirectory($path);
         }
