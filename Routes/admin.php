@@ -11,4 +11,4 @@ Route::prefix('locales')->group(function () {
     Route::any('/import', 'LocalesController@import')->name('locales.import');
     Route::any('/generate', 'LocalesController@generate')->name('locales.generate');
     Route::any('/remove/{code}', 'LocalesController@remove')->name('locales.remove');
-});
+})->middleware('permission');
