@@ -9,9 +9,9 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('locales::general.header') }}</div>
-                @if(env('APP_DEBUG'))
-                    @lang('locales::general.develop_info')
-                @endif
+{{--                @if(env('APP_DEBUG'))--}}
+{{--                    @lang('locales::general.develop_info')--}}
+{{--                @endif--}}
                 <div class="card-body">
                     <button class="btn btn-sm btn-primary" data-toggle="modal"
                             data-target="#generateLang">{{ __('locales::general.generate_new') }}</button>
