@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => 'Locales',
+    'name' => 'Locales', 
     'icon' => 'https://imgur.png',
     'author' => 'WemX',
     'version' => '1.0.0',
@@ -10,17 +10,17 @@ return [
 
     'elements' => [
 
-        'main_menu' => 
+        'main_menu' =>
         [
             // not needed
         ],
 
-        'user_dropdown' => 
+        'user_dropdown' =>
         [
             // not needed
         ],
 
-        'admin_menu' => 
+        'admin_menu' =>
         [
             [
                 'name' => 'Locales',
