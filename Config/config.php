@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => 'Locales', 
+    'name' => 'Locales',
     'icon' => 'https://imgur.png',
     'author' => 'WemX',
     'version' => '1.0.0',
