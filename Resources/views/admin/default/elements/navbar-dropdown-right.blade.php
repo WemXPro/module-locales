@@ -1,7 +1,7 @@
 @php
     $manager = new \Modules\Locales\Models\Manager();
 @endphp
-<li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+<li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" style="background-color: black;"
         class="nav-link notification-toggle nav-link-lg">
         <img alt="{{$manager->getCountryCode(app()->getLocale())}}"
              class="mr-2"
