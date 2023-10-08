@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => 'locales::general.module_name',
+    'name' => 'Locales',
     'icon' => 'https://imgur.png',
     'author' => 'WemX',
     'version' => '1.0.0',
@@ -23,7 +23,7 @@ return [
         'admin_menu' => 
         [
             [
-                'name' => 'locales::general.module_name',
+                'name' => 'Locales',
                 'icon' => '<i class="fas fa-solid fa-globe"></i>',
                 'href' => '/admin/locales',
                 'style' => '',
