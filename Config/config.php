@@ -6,7 +6,7 @@ return [
     'icon' => 'https://imgur.png',
     'author' => 'WemX',
     'version' => '1.0.0',
-    'wemx_version' => '1.0.0',
+    'wemx_version' => '1.7.1',
 
     'elements' => [
 
