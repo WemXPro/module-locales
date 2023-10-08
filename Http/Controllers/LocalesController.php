@@ -12,20 +12,11 @@ use Illuminate\Support\Facades\Http;
 
 class LocalesController extends Controller
 {
-
-
-    public $template;
-
-    // Construct Function
-    public function __construct()
-    {
-        $this->template = 'locales::admin.' . Theme::active()->folder . '.';
-    }
-
     public function index()
     {
         $langs = new Manager();
-        return view($this->template . 'index', [
+
+        return view(Theme::moduleView('Locales', 'index'), [
             'list' => $langs->getInstalled(),
             'localizations' => $langs->getAvailable(),
         ]);
@@ -94,7 +85,8 @@ class LocalesController extends Controller
                 // We process copying errors
             }
         }
-        return view($this->template . 'translate', [
+
+        return view(Theme::moduleView('Locales', 'translate'), [
             'code' => $code,
             'files' => File::allFiles($destination),
         ]);
@@ -108,7 +100,8 @@ class LocalesController extends Controller
         $file = pathinfo($_POST['file']);
         $sourceArr = File::getRequire(dirname($file['dirname']) . '/en/' . $file['basename']);
         $contentArr = File::getRequire($_POST['file']);
-        return view($this->template . 'translate-file', [
+
+        return view(Theme::moduleView('Locales', 'translate-file'), [
             'contentArr' => $contentArr,
             'source' => $sourceArr,
             'code' => $code,

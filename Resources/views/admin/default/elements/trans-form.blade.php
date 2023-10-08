@@ -13,7 +13,8 @@
                 $_source = $source[$arr_key][$key];
             }
         @endphp
-        @include('locales::admin.default.elements.trans-form', [
+
+        @include(AdminTheme::moduleView('Locales', 'elements.trans-form'), [
             'arr_key' => $arr_key . '--' . $key,
             'arr_value' => $value,
             'arr_source' => $_source,
