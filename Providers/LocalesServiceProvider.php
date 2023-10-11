@@ -24,15 +24,15 @@ class LocalesServiceProvider extends ServiceProvider
     {
         $this->app->register(RouteServiceProvider::class);
 
-        if (env('LOCALES_GENERATOR', false)) {
-            $this->app->bind('translator', function ($app) {
-                $loader = new \Illuminate\Translation\FileLoader($app['files'], $app['path.lang']);
-                $loader->addNamespace('lang', $app['path.lang']);
-                $trans = new Translator($loader, $app['config']['app.locale']);
-                $trans->setFallback($app['config']['app.fallback_locale']);
-                return $trans;
-            });
-        }
+//        if (env('LOCALES_GENERATOR', false)) {
+//            $this->app->bind('translator', function ($app) {
+//                $loader = new \Illuminate\Translation\FileLoader($app['files'], $app['path.lang']);
+//                $loader->addNamespace('lang', $app['path.lang']);
+//                $trans = new Translator($loader, $app['config']['app.locale']);
+//                $trans->setFallback($app['config']['app.fallback_locale']);
+//                return $trans;
+//            });
+//        }
     }
 
     public function registerViews(): void
