@@ -21,7 +21,7 @@
                             @include('locales::admin.default.elements.trans-form', [
                                 'arr_key' => $k,
                                 'arr_value' => $v,
-                                'arr_source' => $source[$k],
+                                'arr_source' => $source[$k] ?? null,
                             ])
                         @endforeach
                         <div class="fixed-bottom d-flex justify-content-end">
