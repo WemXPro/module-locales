@@ -26,7 +26,7 @@ return [
                 'name' => 'Locales',
                 'icon' => '<i class="fas fa-solid fa-globe"></i>',
                 'href' => '/admin/locales',
-                'style' => '', 
+                'style' => '',
             ],
             // ... add more menu items
         ],
