@@ -10,7 +10,7 @@ class LangCommand extends Command
 {
 
     protected $signature = 'locales:lang {--action= : import/generate} {--locale= : en}';
-    protected $description = 'Install Billing localization for Pterodactyl';
+    protected $description = 'Manage localization of the application';
 
     private const SEP = DIRECTORY_SEPARATOR;
     private $locale, $fallback_locale, $lang_path, $iosLangs;
