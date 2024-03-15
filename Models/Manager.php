@@ -22,11 +22,7 @@ class Manager
 
         foreach ($this->languages as $key => $path) {
             $code = basename($path);
-            $parts = explode('-', $code);
-            if (count($parts) > 1) {
-                $code = "{$parts[1]}-custom" ;
-            }
-            $this->langs[$code] = $this->iso639->languageByCode1($code);
+            $this->langs[$code] = $this->getCountryName($code);
         }
     }
 
@@ -45,30 +41,38 @@ class Manager
 
     public function getCountryCode($lang_key): string
     {
-        $parts = explode('-', $lang_key);
+        $parts = explode('_', $lang_key);
         if (count($parts) > 1) {
-            $lang_key = $parts[0];
+            $lang_key = $parts[1];
         }
         if ($this->countries->keyBy('iso-639-1')->get($lang_key)){
             return array_key_first($this->countries->keyBy('iso-639-1')->get($lang_key)['countries']) ?? $lang_key;
         } else {
             return $lang_key;
         }
-
     }
 
-    /**
-     * Return an instance of the ISO639 class for generating names.
-     */
+    public function getCountryName($lang): string
+    {
+        $parts = explode('_', $lang);
+        if (count($parts) > 1) {
+            try {
+                $lang = $this->countries->keyBy('iso-639-1')->get($parts[0])['countries'][$parts[1]];
+            } catch (\Exception $e) {
+                $lang = $this->countries->keyBy('iso-639-1')->get($parts[0])['name'];
+            }
+        } else {
+            $lang = $this->countries->keyBy('iso-639-1')->get($lang)['name'];
+        }
+        return ucfirst($lang);
+    }
+
     private
     function getIsoInstance(): ISO639
     {
         return app()->make(ISO639::class);
     }
 
-    /**
-     * Return an instance of the filesystem for getting a folder listing.
-     */
     private
     function getFilesystemInstance(): Filesystem
     {

@@ -7,7 +7,7 @@
              class="mr-2"
              src="https://flagsapi.com/{{$manager->getCountryCode(app()->getLocale())}}/flat/64.png"
              style="width: 16px;">
-        {{ $manager->iso639->languageByCode1(app()->getLocale()) }}
+        {{ $manager->getCountryName(app()->getLocale()) }}
     </a>
     <div class="dropdown-menu dropdown-list dropdown-menu-right">
         <div class="dropdown-header">{{ __('locales::general.language') }}
@@ -18,7 +18,7 @@
                     <img alt="{{$manager->getCountryCode($key)}}" class="mr-2"
                          src="https://flagsapi.com/{{$manager->getCountryCode($key)}}/flat/64.png"
                          style="width: 16px;">
-                    {{ $lang }}
+                    {{ $manager->getCountryName($key) }}
                 </a>
             @endforeach
         </div>

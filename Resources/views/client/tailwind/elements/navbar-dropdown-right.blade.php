@@ -10,7 +10,7 @@
          class="mr-2"
          src="https://flagsapi.com/{{$manager->getCountryCode(app()->getLocale())}}/flat/64.png"
          style="width: 16px;">
-    {{ $manager->iso639->languageByCode1(app()->getLocale()) }}
+    {{ $manager->getCountryName(app()->getLocale()) }}
 </button>
 <div class="hidden z-50 my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
      id="language-dropdown" data-popper-placement="bottom"
@@ -25,7 +25,7 @@
                         <img alt="{{$manager->getCountryCode($key)}}" class="mr-2"
                              src="https://flagsapi.com/{{$manager->getCountryCode($key)}}/flat/64.png"
                              style="width: 16px;">
-                        {{ $lang }}
+                        {{ $manager->getCountryName($key) }}
                     </div>
                 </a>
             </li>

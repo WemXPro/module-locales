@@ -194,7 +194,6 @@ class ISO639
         array('yo', 'yor', 'yor', 'yor', 'Yoruba', 'Yorùbá'),
         array('za', 'zha', 'zha', 'zha', 'Zhuang, Chuang', 'Saɯ cueŋƅ, Saw cuengh'),
         array('zu', 'zul', 'zul', 'zul', 'Zulu', 'isiZulu'),
-        array('br-custom', 'pt-BR', 'pt-BR', 'pt-BR', 'Brazil', 'Brazil'),
     );
 
     public int $indexIso639_1 = 0;
