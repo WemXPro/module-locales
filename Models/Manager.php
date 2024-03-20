@@ -62,7 +62,7 @@ class Manager
                 $lang = $this->countries->keyBy('iso-639-1')->get($parts[0])['name'];
             }
         } else {
-            $lang = $this->countries->keyBy('iso-639-1')->get($lang)['name'];
+            $lang = $this->countries->keyBy('iso-639-1')->get($lang)['name'] ?? 'Unknown';
         }
         return ucfirst($lang);
     }
