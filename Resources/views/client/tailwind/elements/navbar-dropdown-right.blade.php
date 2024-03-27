@@ -33,4 +33,4 @@
     </ul>
 </div>
 
-<span class="hidden mx-2 w-px h-5 bg-gray-200 dark:bg-gray-600 md:inline"></span>
+<span class="hidden w-px h-5 bg-gray-200 dark:bg-gray-600 md:inline"></span>
