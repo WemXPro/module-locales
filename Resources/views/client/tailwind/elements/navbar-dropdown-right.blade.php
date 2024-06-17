@@ -8,8 +8,8 @@
         class="inline-flex items-center text-gray-800 dark:text-gray-300 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2.5 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
     <img alt="{{$manager->getCountryCode(app()->getLocale())}}"
          class="mr-2"
-         src="https://flagsapi.com/{{$manager->getCountryCode(app()->getLocale())}}/flat/64.png"
-         style="width: 16px;">
+         src="/assets/core/img/flags/{{ strtolower($manager->getCountryCode(app()->getLocale())) }}.svg"
+         style="width: 18px; border-radius: 2px;">
     {{ $manager->getCountryName(app()->getLocale()) }}
 </button>
 <div class="hidden z-50 my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
@@ -23,8 +23,8 @@
                    role="menuitem">
                     <div class="inline-flex items-center">
                         <img alt="{{$manager->getCountryCode($key)}}" class="mr-2"
-                             src="https://flagsapi.com/{{$manager->getCountryCode($key)}}/flat/64.png"
-                             style="width: 16px;">
+                             src="/assets/core/img/flags/{{ strtolower($manager->getCountryCode($key)) }}.svg"
+                             style="width: 18px; border-radius: 2px;">
                         {{ $manager->getCountryName($key) }}
                     </div>
                 </a>
