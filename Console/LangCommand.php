@@ -8,12 +8,20 @@ use Modules\Locales\Models\ISO639;
 
 class LangCommand extends Command
 {
-
     protected $signature = 'locales:lang {--action= : import/generate} {--locale= : en}';
+
     protected $description = 'Manage localization of the application';
 
     private const SEP = DIRECTORY_SEPARATOR;
-    private $locale, $fallback_locale, $lang_path, $iosLangs;
+
+    private $locale;
+
+    private $fallback_locale;
+
+    private $lang_path;
+
+    private $iosLangs;
+
     private $args = [];
 
     private const ACTIONS = [
@@ -70,6 +78,7 @@ class LangCommand extends Command
         foreach ($langs_dirs as $value) {
             $langs[basename($value)] = $value;
         }
+
         return $langs;
     }
 
@@ -81,6 +90,7 @@ class LangCommand extends Command
                     File::makeDirectory($dir, 0755, true);
                 }
             }
+
             return;
         }
         if (!file_exists($path)) {
@@ -103,6 +113,7 @@ class LangCommand extends Command
         foreach ($this->iosLangs->allLanguages() as $key => $value) {
             $codes[$value[0]] = $value[4];
         }
+
         return $codes;
     }
 }

@@ -2,21 +2,15 @@
 
 namespace Modules\Locales\Providers;
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
 use Modules\Locales\Console\LangCommand;
 use Modules\Locales\Console\ScanTranslationsCommand;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    /**
-     * @var string $moduleName
-     */
     protected string $moduleName = 'Locales';
 
-    /**
-     * @var string $moduleNameLower
-     */
     protected string $moduleNameLower = 'locales';
 
     protected string $moduleNamespace = 'Modules\Locales\Http\Controllers';
@@ -46,8 +40,6 @@ class RouteServiceProvider extends ServiceProvider
 
     /**
      * Register config.
-     *
-     * @return void
      */
     protected function registerConfig(): void
     {

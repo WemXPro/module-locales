@@ -10,8 +10,9 @@ class LocalizationMiddleware
 {
     public function handle($request, Closure $next)
     {
-        $lang =  Auth::user() ?  Auth::user()->language : $request->getPreferredLanguage();
+        $lang = Auth::user() ? Auth::user()->language : $request->getPreferredLanguage();
         App::setLocale($lang);
+
         return $next($request);
     }
 }

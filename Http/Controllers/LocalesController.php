@@ -2,13 +2,13 @@
 
 namespace Modules\Locales\Http\Controllers;
 
+use App\Facades\AdminTheme as Theme;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Locales\Models\Manager;
-use App\Facades\AdminTheme as Theme;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
+use Modules\Locales\Models\Manager;
 
 class LocalesController extends Controller
 {
@@ -22,16 +22,17 @@ class LocalesController extends Controller
         ]);
     }
 
-
     public function generate(Request $request)
     {
         Artisan::call("locales:lang --action=generate --locale={$request->input('lang_code')}");
+
         return redirect()->back()->with('success', Artisan::output());
     }
 
     public function import()
     {
-        Artisan::call("locales:lang --action=import");
+        Artisan::call('locales:lang --action=import');
+
         return redirect()->back()->with('success', Artisan::output());
     }
 
@@ -41,6 +42,7 @@ class LocalesController extends Controller
         if (File::isDirectory($path)) {
             File::deleteDirectory($path);
         }
+
         return redirect()->back()->with('success', "Localization {$code} removed");
     }
 
@@ -63,7 +65,7 @@ class LocalesController extends Controller
             if (!File::exists($newFilePath)) {
                 File::copy($file, $newFilePath);
             }
-            
+
         }
 
         foreach (\Module::collections() as $module) {
@@ -95,7 +97,7 @@ class LocalesController extends Controller
     public function translateFile($code)
     {
         if (!isset($_POST['file']) or empty($_POST['file'])) {
-            return redirect()->back()->with('error', "The file does not exist");
+            return redirect()->back()->with('error', 'The file does not exist');
         }
         $file = pathinfo($_POST['file']);
         $sourceArr = File::getRequire(dirname($file['dirname']) . '/en/' . $file['basename']);
@@ -105,7 +107,7 @@ class LocalesController extends Controller
             'contentArr' => $contentArr,
             'source' => $sourceArr,
             'code' => $code,
-            'file' => $_POST['file']
+            'file' => $_POST['file'],
         ]);
     }
 
@@ -125,9 +127,9 @@ class LocalesController extends Controller
             $current = $value;
         });
         file_put_contents($request->input('file--path'), '<?php return ' . var_export($newData, true) . ';');
+
         return redirect(route('locales.translate', ['code' => $code]))->with('success', "Localization {$request->input('file--path')} saved");
     }
-
 
     public function translateApi(Request $request)
     {
@@ -138,6 +140,7 @@ class LocalesController extends Controller
             'langpair' => $lang,
         ]);
         $translation = $response->json()['responseData']['translatedText'];
+
         return response()->json(['translation' => $translation]);
     }
 
@@ -151,6 +154,7 @@ class LocalesController extends Controller
         app()->setLocale($locale);
         cookie('locale', $locale, 60 * 24 * 365);
         session(['locale' => $locale]);
+
         return redirect()->back();
     }
 }

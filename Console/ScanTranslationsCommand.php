@@ -26,7 +26,6 @@ class ScanTranslationsCommand extends Command
         $defaultPattern = '/(?<!\w)(trans|__|@lang)\([\'"]([^\'"]*)[\'"],\s*\[[^\]]*\'default\'\s*=>\s*([\'"][^\'"]*[\'"])\]/';
         $allKeysPattern = '/(?<!\w)(trans|__|@lang)\([\'"]([^\'"]*)[\'"](,\s*\[[^]]+\])?\)/';
 
-
         foreach ($iterator as $file) {
             if ($file->isFile() && $file->getExtension() === 'php') {
                 $content = file_get_contents($file->getPathname());
@@ -52,21 +51,21 @@ class ScanTranslationsCommand extends Command
         }
 
         $this->warn('Found keys and values of functions trans(), __(), @lang():');
-        $this->info("");
+        $this->info('');
         $locFile = '';
         $oldModule = '';
         $oldLocFile = '';
 
         foreach ($translations as $key => $value) {
 
-            if (str_contains($key, "::")) {
+            if (str_contains($key, '::')) {
                 [$module, $key] = explode('::', $key, 2);
                 [$locFile, $key] = explode('.', $key, 2);
                 if ($module != $oldModule){
                     $oldModule = $module;
                     $this->warn("Localizations module: $module");
                 }
-            } elseif (str_contains($key, ".")) {
+            } elseif (str_contains($key, '.')) {
                 [$locFile, $key] = explode('.', $key, 2);
             }
 

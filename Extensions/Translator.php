@@ -1,9 +1,10 @@
 <?php
+
 namespace Modules\Locales\Extensions;
 
+use Illuminate\Contracts\Translation\Loader;
 use Illuminate\Translation\Translator as BaseTranslator;
 use Modules\Locales\Jobs\UpdateTranslationFileJob;
-use Illuminate\Contracts\Translation\Loader;
 
 class Translator extends BaseTranslator
 {
@@ -11,6 +12,7 @@ class Translator extends BaseTranslator
     {
         parent::__construct($loader, $locale);
     }
+
     public function get($key, array $replace = [], $locale = null, $fallback = true): array|string|null
     {
         $job = new UpdateTranslationFileJob($key, $locale, $replace);
@@ -18,6 +20,7 @@ class Translator extends BaseTranslator
         if (array_key_exists('default', $replace)){
             unset($replace['default']);
         }
+
         return parent::get($key, $replace, $locale, $fallback);
     }
 }

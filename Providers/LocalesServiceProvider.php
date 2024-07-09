@@ -8,8 +8,8 @@ use Modules\Locales\Http\Middleware\LocalizationMiddleware;
 
 class LocalesServiceProvider extends ServiceProvider
 {
-
     protected string $moduleName = 'Locales';
+
     protected string $moduleNameLower = 'locales';
 
     public function boot(): void
@@ -24,15 +24,15 @@ class LocalesServiceProvider extends ServiceProvider
     {
         $this->app->register(RouteServiceProvider::class);
 
-//        if (env('LOCALES_GENERATOR', false)) {
-//            $this->app->bind('translator', function ($app) {
-//                $loader = new \Illuminate\Translation\FileLoader($app['files'], $app['path.lang']);
-//                $loader->addNamespace('lang', $app['path.lang']);
-//                $trans = new Translator($loader, $app['config']['app.locale']);
-//                $trans->setFallback($app['config']['app.fallback_locale']);
-//                return $trans;
-//            });
-//        }
+        //        if (env('LOCALES_GENERATOR', false)) {
+        //            $this->app->bind('translator', function ($app) {
+        //                $loader = new \Illuminate\Translation\FileLoader($app['files'], $app['path.lang']);
+        //                $loader->addNamespace('lang', $app['path.lang']);
+        //                $trans = new Translator($loader, $app['config']['app.locale']);
+        //                $trans->setFallback($app['config']['app.fallback_locale']);
+        //                return $trans;
+        //            });
+        //        }
     }
 
     public function registerViews(): void
@@ -40,7 +40,7 @@ class LocalesServiceProvider extends ServiceProvider
         $viewPath = resource_path('views/modules/' . $this->moduleNameLower);
         $sourcePath = module_path($this->moduleName, 'Resources/views');
         $this->publishes([
-            $sourcePath => $viewPath
+            $sourcePath => $viewPath,
         ], ['views', $this->moduleNameLower . '-module-views']);
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);
     }
@@ -63,6 +63,7 @@ class LocalesServiceProvider extends ServiceProvider
                 $paths[] = $path . '/modules/' . $this->moduleNameLower;
             }
         }
+
         return $paths;
     }
 

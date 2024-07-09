@@ -8,9 +8,13 @@ use Illuminate\Support\Collection;
 class Manager
 {
     public ?ISO639 $iso639 = null;
+
     private ?Filesystem $filesystem = null;
+
     private ?array $languages = null;
+
     private array $langs = [];
+
     private Collection $countries;
 
     public function __construct()
@@ -36,6 +40,7 @@ class Manager
         foreach ($this->iso639->allLanguages() as $key => $value) {
             $codes[$value[0]] = $value[4];
         }
+
         return $codes;
     }
 
@@ -64,17 +69,16 @@ class Manager
         } else {
             $lang = $this->countries->keyBy('iso-639-1')->get($lang)['name'] ?? 'Unknown';
         }
+
         return ucfirst($lang);
     }
 
-    private
-    function getIsoInstance(): ISO639
+    private function getIsoInstance(): ISO639
     {
         return app()->make(ISO639::class);
     }
 
-    private
-    function getFilesystemInstance(): Filesystem
+    private function getFilesystemInstance(): Filesystem
     {
         return app()->make(Filesystem::class);
     }

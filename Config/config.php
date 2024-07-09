@@ -10,18 +10,15 @@ return [
 
     'elements' => [
 
-        'main_menu' =>
-        [
+        'main_menu' => [
             // not needed
         ],
 
-        'user_dropdown' =>
-        [
+        'user_dropdown' => [
             // not needed
         ],
 
-        'admin_menu' =>
-        [
+        'admin_menu' => [
             [
                 'name' => 'Locales',
                 'icon' => '<i class="fas fa-solid fa-globe"></i>',

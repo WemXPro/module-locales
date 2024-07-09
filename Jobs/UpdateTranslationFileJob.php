@@ -15,18 +15,17 @@ class UpdateTranslationFileJob implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected string $key;
+
     protected ?string $locale;
+
     protected array $replace;
 
     /**
      * Create a new job instance.
      *
-     * @param string $key
-     * @param string|null $locale
-     * @param array $replace
      * @return void
      */
-    public function __construct(string $key, string $locale = null, array $replace = [])
+    public function __construct(string $key, ?string $locale = null, array $replace = [])
     {
         $this->key = $key;
         $this->locale = $locale;
@@ -35,19 +34,17 @@ class UpdateTranslationFileJob implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
     public function handle(): void
     {
         $key = $this->key;
         $locale = $this->locale;
 
-        if (str_contains($key, " ")) {
+        if (str_contains($key, ' ')) {
             return;
-        } else if (str_contains($key, "::")) {
+        } elseif (str_contains($key, '::')) {
             $keyData = $this->processModuleKey($key);
-        } else if (str_contains($key, ".")) {
+        } elseif (str_contains($key, '.')) {
             $keyData = $this->processStandardKey($key);
         } else {
             return;
@@ -65,8 +62,8 @@ class UpdateTranslationFileJob implements ShouldQueue
                     continue;
                 }
                 $fileData = [];
-            } else if (File::isWritable($file)) {
-                $fileData = require($file);
+            } elseif (File::isWritable($file)) {
+                $fileData = require $file;
             } else {
                 continue;
             }
@@ -74,7 +71,6 @@ class UpdateTranslationFileJob implements ShouldQueue
             $newItem = $this->createNewItem($itemKey);
 
             $exists = $this->checkKeyExists($fileData, $itemKey);
-
 
             if (!$exists) {
                 $fileData = array_merge_recursive($fileData, $newItem);
@@ -103,6 +99,7 @@ class UpdateTranslationFileJob implements ShouldQueue
             }
             $current = $value;
         });
+
         return $newItem;
     }
 
@@ -118,6 +115,7 @@ class UpdateTranslationFileJob implements ShouldQueue
             }
             $temp = $temp[$part];
         }
+
         return $exists;
     }
 
@@ -126,12 +124,14 @@ class UpdateTranslationFileJob implements ShouldQueue
         $keyParts = explode('::', $key);
         $localisationPath = Module::getModulePath($keyParts[0]) . 'Resources/lang';
         $key = $keyParts[1];
+
         return compact('localisationPath', 'key');
     }
 
     private function processStandardKey($key): array
     {
         $localisationPath = resource_path('lang');
+
         return compact('localisationPath', 'key');
     }
 }
