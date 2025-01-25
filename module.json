@@ -1,11 +1,18 @@
 {
     "name": "Locales",
     "alias": "locales",
-    "description": "Laravel localization manager by WemxPro",
+    "description": "Locales is a module that allows you to manage your localizations.",
     "keywords": [],
     "priority": 0,
     "providers": [
         "Modules\\Locales\\Providers\\LocalesServiceProvider"
     ],
-    "files": ["locales.php"]
+    "files": [
+        "locales.php"
+    ],
+    "type": "module",
+    "icon": "https://imgur.png",
+    "author": "GIGABAIT",
+    "version": "1.0.0",
+    "wemx_version": "1.7.1"
 }
