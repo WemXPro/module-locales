@@ -1,7 +1,10 @@
 {
     "name": "Locales",
-    "alias": "locales",
+    "type": "module",
     "description": "Locales is a module that allows you to manage your localizations.",
+    "version": "1.0.0",
+    "author": "GIGABAIT",
+    "alias": "locales",
     "keywords": [],
     "priority": 0,
     "providers": [
@@ -10,9 +13,6 @@
     "files": [
         "locales.php"
     ],
-    "type": "module",
     "icon": "https://imgur.png",
-    "author": "GIGABAIT",
-    "version": "1.0.0",
     "wemx_version": "1.7.1"
 }
