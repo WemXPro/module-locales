@@ -3,7 +3,6 @@
 namespace Modules\Locales\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Modules\Locales\Extensions\Translator;
 use Modules\Locales\Http\Middleware\LocalizationMiddleware;
 
 class LocalesServiceProvider extends ServiceProvider
